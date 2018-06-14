@@ -7,17 +7,18 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 // 3. Guesses Left: (# of guesses left. This will update)
  var guessesLeft = 6;
  var guessChoices = [];
-// 4. Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.)
-        
+
+// This is selecting the computers guess.
+var computerGuess = computerChoices[Math.floor(Math.random()*computerChoices.length)]; 
+  
 // 5. When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
-        
+   
 // 6. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
 
-______________________________________________________________________________________________________
+//______________________________________________________________________________________________________
 
-// beginning: when the page loads, or when the game ends
-// and goes to the next round
-// what are your global variables?
+
+// what are your variables?
 // meaning what variables need to persist throughout the game?
 // ex. win/loss record, number of guesses, your available
 // game choices. a, b, c, d, etc.
@@ -32,9 +33,16 @@ ________________________________________________________________________________
 
 
 
-
+// Start of the event to game and captures the keys.
 document.onkeyup = function (event) {
-    
+    userGuess = event.key;
+    console.log(computerGuess); 
+    // pick the computer guess
+    if (computerGuess === userGuess ) {
+        console.log ("You got it right!");
+        console.log(wins = +1)
+        console.log(losses = +1);
+    }
 }
 
 var userText = document.getElementById("Wins:");
