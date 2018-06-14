@@ -1,0 +1,1 @@
+var userText = document.getElementById("Wins:");
