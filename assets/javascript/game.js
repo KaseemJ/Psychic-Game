@@ -1,19 +1,3 @@
-var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-
-// 1. Wins: (# of times the user has guessed the letter correctly)
-var wins = 0;
-// 2. Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
-var losses = 0;
-// 3. Guesses Left: (# of guesses left. This will update)
-var guessesLeft = 6;
-// All of the wrong selection by the user.
-var guessChoices = [];
-
-// This is selecting the computers guess.
-var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-// 5. When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
-
 // 6. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
 
 // what are your variables?
@@ -28,32 +12,58 @@ var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.l
 // When the user loses what happens?
 // When the user wins what happens?
 // var reset = function() {}
+var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 
+// 1. Wins: (# of times the user has guessed the letter correctly)
+var wins = 0;
+// 2. Losses: (if guessesLeft = 0 losses += 1 )
+var losses = 0;
+// 3. Guesses Left: (# of guesses left. This will update)
+var guessesLeft = 6;
+// All of the wrong selection by the user.
+var guessChoices = [];
 
+// This is selecting the computers guess.
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
+// 5. When the player wins, increase the Wins counter and start the game over again (without refreshing the page)
 // Start of the event to game and captures the keys.
-document.onkeyup = function (event) {
-    // User is selecting key choice/guesses.
-    var i;
-    for (i = 0; i < guessesLeft; i++) {
-       
+// User is selecting key choice/guesses.
+var i;
+for (i = 0; i < guessesLeft; i++) {
+    document.onkeyup = function (event) {
+
 
         userGuess = event.key;
         console.log(computerGuess);
         // pick the computer guess/choosing the right answer
         if (computerGuess === userGuess) {
             alert("You got it right!");
-            wins = +1;
+            wins = wins + 1;
+            console.log("These are wins " + wins);
+
             // when user doesn't have the correct choice/ choosing the wrong answer.
         } else if (computerGuess !== userGuess) {
             guessesLeft--;
             alert("Try again");
+
+            // guessChoices is collection of wrong guesses
             guessChoices.push(userGuess);
             console.log(guessChoices);
         }
     }
-    console.log("You lose!");
+    // Losses update
+    // if guessChoices.length(size of array) == 6
+    // if guessesLeft = 0
+    if (guessesLeft === 0) {
+        losses = losses + 1;
+        console.log("These are losses " + losses);
+    }
 };
+
+
+
+
 var userText = document.getElementById("Wins:");
 var userText = document.getElementById("Losses:");
 var userText = document.getElementById("Guesses:");
