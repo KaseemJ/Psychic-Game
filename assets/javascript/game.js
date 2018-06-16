@@ -1,25 +1,20 @@
-// 6. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
-
-// what are your variables?
-// meaning what variables need to persist throughout the game?
-// ex. win/loss record, number of guesses, your available
-// game choices. a, b, c, d, etc.
-// what are my events?
-// what happens during the event?
-// conditionals in event that shape if the game continues,
-// if the user loses, and if the user wins, and 
-// determining these things. 
-// When the user loses what happens?
-// When the user wins what happens?
-// var reset = function() {}
 var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 
 var htmlWins = document.getElementById("wins");
-var htmlL = document.getElementById("losses");
+var htmlLosses = document.getElementById("losses");
 var htmlGuesses = document.getElementById("guesses");
+var htmlsoFar = document.getElementById("soFar");
 // manipilating the DOM to add content next to the <p> tags in the browser
-htmlWins.innerHTML = "Hello world"
+// .innerHTML adds the zeros to above var's
+htmlWins.innerHTML = 0;
+htmlLosses.innerHTML = 0;
+htmlGuesses.innerHTML = 0;
+htmlsoFar.innerHTML = 0;
+console.log("htmlsoFar", htmlsoFar.innerHTML);
 console.log("htmlWins", htmlWins.innerHTML);
+console.log("htmlLosses", htmlLosses.innerHTML);
+console.log("htmlGuesses", htmlGuesses.innerHTML);
+
 
 // 1. Wins: (# of times the user has guessed the letter correctly)
 var wins = 0;
@@ -86,7 +81,7 @@ var reset = function () {
 
 }
 
-
+// 6. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
 
 // var i;
 // for (i = 0; i < guessesLeft; i++) {
