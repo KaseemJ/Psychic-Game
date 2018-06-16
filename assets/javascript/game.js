@@ -1,3 +1,4 @@
+
 var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 
 var htmlWins = document.getElementById("wins");
@@ -15,6 +16,11 @@ console.log("htmlWins", htmlWins.innerHTML);
 console.log("htmlLosses", htmlLosses.innerHTML);
 console.log("htmlGuesses", htmlGuesses.innerHTML);
 
+// how to join array to display numbers in wins, losses, guesses
+// .join("wins"); {
+// array.join("losses");
+// array.join("guessesLeft");
+// }
 
 // 1. Wins: (# of times the user has guessed the letter correctly)
 var wins = 0;
@@ -28,7 +34,7 @@ var guessChoices = [];
 // This is selecting the computers guess.
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-// 5. When the player wins, increase the Wins counter and start the game over again (without refreshing the page)
+
 // Start of the event to game and captures the keys.
 // User is selecting key choice/guesses.
 
@@ -81,10 +87,6 @@ var reset = function () {
 
 }
 
-// 6. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
-
-// var i;
-// for (i = 0; i < guessesLeft; i++) {
 
 
 
